@@ -23,14 +23,13 @@ NOTE: The program uses tkinter's `colorchooser` module for the colors' dialog.
 Of course, the main part of the program is its ability to fill a section of the program with an Active Color.
 On startup, when the program renders the grid on the canvas, it records all the nodes on the canvas in this example form:
 
-`
-grid = {
+
+`grid = {
 
     (x1,y2) : 'black',
     (x2,y2) : 'white'
 
-}
-`
+}`
 
 wherein, `x,y` are the cell's row and column respectively.
 
