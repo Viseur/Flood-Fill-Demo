@@ -16,11 +16,11 @@ class FloodFillDemo:
 
         self.master.wm_attributes('-fullscreen',True)
 
-        #some helper variables.
+        # some helper variables.
         self.gridSize = 0
         self.grid = {}
 
-        self.colors = [rgb_to_hex_16((0,0,0)),rgb_to_hex_16((255,255,255))] #colors chosen by the user at some point in the program.
+        self.colors = [rgb_to_hex_16((0,0,0)),rgb_to_hex_16((255,255,255))] # colors chosen by the user at some point in the program.
 
         self.i, self.j = [], []
 
@@ -30,7 +30,7 @@ class FloodFillDemo:
 
         self.visited = []
 
-        #draws the canvas onto the window.
+        # draws the canvas onto the window.
         self.canvas = Canvas(self.master, height = 600 - 4, width = 600 - 4, bg="Black")
         self.canvas.pack(side=TOP)
 
@@ -81,22 +81,30 @@ class FloodFillDemo:
         self.coords.config(text = f"Mouse-> ({event.x},{event.y})")
 
     def toggleBrush(self):
-        self.currentTool.config(text = "Tool-> Brush")
+            self.isBrush = True
+            self.isFillTool = False
+            self.isEraser = False
 
-        self.canvas.bind("<B1-Motion>",self.onDrag)
-        self.canvas.bind("<Button-1>",self.onDrag)
-        
+            self.currentTool.config(text = "Tool-> Brush")
+
+            self.canvas.bind("<B1-Motion>",self.onDrag)
+            self.canvas.bind("<Button-1>",self.onDrag)
+            
     def toggleFillTool(self):
-        self.currentTool.config(text = "Tool-> Fill Tool")
+            self.currentTool.config(text = "Tool-> Fill Tool")
 
-        self.canvas.bind("<Button-1>",self.onClickFill)
-        self.canvas.bind("<B1-Motion>",lambda e:"break")
-        
+            self.canvas.bind("<Button-1>",self.onClickFill)
+            self.canvas.bind("<B1-Motion>",lambda e:"break")
+            
     def toggleEraser(self):
-        self.currentTool.config(text = "Tool-> Eraser")
+            self.isFillTool = False
+            self.isBrush = False
+            self.isEraser = True
 
-        self.canvas.bind("<B1-Motion>",self.onDragErase)
-        self.canvas.bind("<Button-1>",self.onDragErase)
+            self.currentTool.config(text = "Tool-> Eraser")
+
+            self.canvas.bind("<B1-Motion>",self.onDragErase)
+            self.canvas.bind("<Button-1>",self.onDragErase)
 
     def toggleColors(self):
         currentColorChosen = askcolor()[-1] # choose hex value.
@@ -122,7 +130,7 @@ class FloodFillDemo:
 
     def getVisitedNodes(self, e):
         self.visited = list(set(self.visited))
-        print(sorted(self.visited))
+        print(self.visited)
         
     def createGrid(self, gridSize):
         if gridSize >= 20:
@@ -201,7 +209,6 @@ class FloodFillDemo:
 
 def main():
     root=Tk()
-
     app = FloodFillDemo(root)
     app.run() 
         
