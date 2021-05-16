@@ -31,7 +31,7 @@ grid = {
 }
 `
 
-wherein, `x,y` are the cell's row and column respectively.
+wherein, `x,y` are the cell's row and column respectively. ( For simplicity, the program referrs to 'black' as an empty node. )
 
 Whilst drawing, the program simply replaces the current cell's color with the active color - both, on the canvas, as well as in the grid dictionary. Similarly, when performing the flood fill, it checks the nodes around by referring to the grid dictionary, or `dict` in python.
 
@@ -45,3 +45,7 @@ Theory: https://en.wikipedia.org/wiki/Flood_fill
 Python implementation: https://www.geeksforgeeks.org/flood-fill-algorithm-implement-fill-paint/
 
 NOTE: The program has a text based version as well, that is nearly the same as the one mentioned in the 'Python implementation' above, but it was my first attempt to writing flood fill algorithm in code.
+
+# What the program does not have, *yet* :
+The program itself works at just enough speed. Upon increasing nodes in the grid, the flood fill causes a ton of lag, and can even crash the program. It needs optimizations.
+Secondly, it does not have a lot of support in customizing the Interface, particularly because it only deals with making the algorithm work, graphically. 
