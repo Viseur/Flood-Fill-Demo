@@ -25,10 +25,7 @@ On startup, when the program renders the grid on the canvas, it records all the 
 
 
 `grid = {
-
     (x1,y2) : 'black',
-    (x2,y2) : 'white'
-
 }`
 
 wherein, `x,y` are the cell's row and column respectively.
