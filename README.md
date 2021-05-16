@@ -16,6 +16,7 @@ The program even has a **Tools** menu, that lets the user choose between the fol
 4. Colors Menu (lets the user choose an active color)
 
 and just for presentation again, it has a **Clear Canvas** option as well.
+
 NOTE: The program uses tkinter's `colorchooser` module for the colors' dialog.
 
 # Implementing the Flood fill functionality:
@@ -24,8 +25,10 @@ On startup, when the program renders the grid on the canvas, it records all the 
 
 `
 grid = {
-(x1,y2) : 'black',
-(x2,y2) : 'white'
+
+    (x1,y2) : 'black',
+    (x2,y2) : 'white'
+
 }
 `
 
@@ -39,6 +42,7 @@ Checking the color of the clicked node is done by using PIL's `ImageGrab.grab()`
 
 # References:
 Theory: https://en.wikipedia.org/wiki/Flood_fill
+
 Python implementation: https://www.geeksforgeeks.org/flood-fill-algorithm-implement-fill-paint/
 
 NOTE: The program has a text based version as well, that is nearly the same as the one mentioned in the 'Python implementation' above, but it was my first attempt to writing flood fill algorithm in code.
