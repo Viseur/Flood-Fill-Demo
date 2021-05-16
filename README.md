@@ -7,7 +7,7 @@ The program is written in pure Python, using Tkinter for the Interface, and PIL.
 # How does the program work?
 The program, instead of drawing native tkinter canvas lines, renders rectangles on mouse motion, in a grid that is created at program start up. When drawing, the program keeps track of active color and tool, and just for presentation purposes, also shows mouse coordinates, all at the left side of the screen.
 
-![image](https://user-images.githubusercontent.com/84274916/118397738-1f722280-b673-11eb-8752-e9fd977a82a2.png)
+![image](https://user-images.githubusercontent.com/84274916/118399449-cb6b3c00-b67a-11eb-847c-b11605fbef2f.png)
 
 The program even has a **Tools** menu, that lets the user choose between the following tools:
 1. Brush Tool
@@ -16,6 +16,7 @@ The program even has a **Tools** menu, that lets the user choose between the fol
 4. Colors Menu (lets the user choose an active color)
 
 and just for presentation again, it has a **Clear Canvas** option as well.
+NOTE: The program uses tkinter's `colorchooser` module for the colors' dialog.
 
 # Implementing the Flood fill functionality:
 Of course, the main part of the program is its ability to fill a section of the program with an Active Color.
@@ -34,3 +35,9 @@ Whilst drawing, the program simply replaces the current cell's color with the ac
 The flood fill algorithm is implemented quite simply, by grabbing the cell clicked when the current tool is the fill tool, and recursively check the color of the nodes around the clicked node. It colors only those nodes, which are the same color as the clicked node.
 
 Checking the color of the clicked node is done by using PIL's `ImageGrab.grab()`, and then using the hex value of the color returned by using `grab()`. I defined a helper function for this, namely, `rgb_to_hex16`.
+
+# References:
+Theory: https://en.wikipedia.org/wiki/Flood_fill
+Python implementation: https://www.geeksforgeeks.org/flood-fill-algorithm-implement-fill-paint/
+
+NOTE: The program has a text based version as well, that is nearly the same as the one mentioned in the 'Python implementation' above, but it was my first attempt to writing flood fill algorithm in code.
