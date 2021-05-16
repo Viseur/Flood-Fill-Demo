@@ -24,9 +24,12 @@ Of course, the main part of the program is its ability to fill a section of the 
 On startup, when the program renders the grid on the canvas, it records all the nodes on the canvas in this example form:
 
 
-`grid = {
-    (x1,y2) : 'black',
-}`
+`
+grid = {
+    (x1,y1) : 'black',
+    (x2,y2) : 'black',
+}
+`
 
 wherein, `x,y` are the cell's row and column respectively.
 
