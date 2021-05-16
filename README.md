@@ -9,6 +9,8 @@ The program, instead of drawing native tkinter canvas lines, renders rectangles 
 
 ![image](https://user-images.githubusercontent.com/84274916/118399449-cb6b3c00-b67a-11eb-847c-b11605fbef2f.png)
 
+NOTE: The program can be run directly by downloading `flood_fill.exe`, attached in the repository.
+
 The program even has a **Tools** menu, that lets the user choose between the following tools:
 1. Brush Tool
 2. Eraser Tool
